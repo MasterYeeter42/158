@@ -4,6 +4,7 @@ AFRAME.registerComponent("cursor-listener", {
   },
   init: function () {
     this.handleMouseEnterEvents();
+    this.handleMouseLeaveEvents();
     
   },
 
@@ -29,6 +30,11 @@ AFRAME.registerComponent("cursor-listener", {
   },
   handleMouseLeaveEvents: function () {
     // Mouse Leave Events
+    this.el.addEventListener("mouseleave", () => {
+      const{ selectedItemId } = this.data;
+      if (selectedItemId)
+      
+    });
     
   },
 });
