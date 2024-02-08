@@ -32,9 +32,16 @@ AFRAME.registerComponent("cursor-listener", {
     // Mouse Leave Events
     this.el.addEventListener("mouseleave", () => {
       const{ selectedItemId } = this.data;
-      if (selectedItemId)
-      
-    });
-    
+      if (selectedItemId) {
+        const el = document.querySelector(`#${selectedItemId}`)
+        const id = el.getAttribute("id");
+        if (id == selectedItemId) {
+          el.setAttribute("material", {
+            color: "#0077CC",
+            opacity: 1,
+          }
+        }
+      }
+    }); 
   },
 });
